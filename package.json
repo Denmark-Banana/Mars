@@ -1,19 +1,33 @@
 {
-  "name": "mars",
-  "version": "1.0.0",
-  "description": "Cloning Youtube with Vanilla and NodeJS",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Denmark-Banana/Mars.git"
-  },
-  "author": "Denmark-Banana",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/Denmark-Banana/Mars/issues"
-  },
-  "homepage": "https://github.com/Denmark-Banana/Mars#readme"
+    "name": "mars",
+    "version": "1.0.0",
+    "description": "Cloning Youtube with Vanilla and NodeJS",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "start": "nodemon --exec babel-node init.js --delay 2"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/Denmark-Banana/Mars.git"
+    },
+    "author": "Denmark-Banana",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/Denmark-Banana/Mars/issues"
+    },
+    "homepage": "https://github.com/Denmark-Banana/Mars#readme",
+    "dependencies": {
+        "@babel/core": "^7.7.7",
+        "@babel/node": "^7.7.7",
+        "cookie-parser": "^1.4.4",
+        "core-js": "^3.6.1",
+        "express": "^4.17.1",
+        "helmet": "^3.21.2",
+        "morgan": "^1.9.1"
+    },
+    "devDependencies": {
+        "@babel/preset-env": "^7.7.7",
+        "nodemon": "^2.0.2"
+    }
 }
