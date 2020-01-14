@@ -22,12 +22,13 @@ export const getUpload = (req, res) =>
     res.render('upload', { pageTitle: 'Upload' });
 
 export const postUpload = (req, res) => {
-    const {
-        body: { file, title, description }
-    } = req;
+    const { body } = req;
+    console.log(body);
     // To Do : Upload and Save
     // fake Id
-    res.redirect(routes.videoDetail(324393));
+    res.render('upload', { pageTitle: 'Upload' });
+    //downlink : http://bbb3d.renderfarming.net/download.html
+    //res.redirect(routes.videoDetail(324393));
 }
 export const videoDetail = (req, res) =>
     res.render('videoDetail', { pageTitle: 'Video Detail' });
