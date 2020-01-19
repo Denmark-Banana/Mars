@@ -1,12 +1,12 @@
-import "./db";
+import './db';
+import dontenv from 'dotenv';
 import app from './app';
-import dontenv from "dotenv";
+import './models/Video';
+import './models/Comment';
+
 dontenv.config();
-import "./models/Video";
-import "./models/Comment";
 
 const PORT = process.env.PORT || 3000;
-const handleListening = () =>
-    console.log(`✅  listening on port ${PORT}!`);
+const handleListening = () => console.log(`✅  listening on port ${PORT}!`);
 
 app.listen(PORT, handleListening);
