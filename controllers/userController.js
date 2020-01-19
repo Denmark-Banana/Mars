@@ -6,7 +6,7 @@ export const getJoin = (req, res) => {
 
 export const postJoin = (req, res) => {
     const {
-        body: { name, email, password, password2 }
+        body: { password, password2 }
     } = req;
     if (password !== password2) {
         res.status(400);
@@ -22,14 +22,11 @@ export const getLogin = (req, res) => {
     res.render('login', { pageTitle: 'Login' });
 };
 export const postLogin = (req, res) => {
-    //To Do Check Password
-    const {
-        body: { email, password }
-    } = req;
+    // To Do Check Password
     res.redirect(routes.home);
 };
 export const logout = (req, res) => {
-    //To Do : Process Log Out
+    // To Do : Process Log Out
     res.redirect(routes.home);
 };
 export const userDetail = (req, res) => {
