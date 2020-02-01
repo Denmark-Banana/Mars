@@ -2,7 +2,7 @@ const videoContainer = document.getElementById('jsVideoPlayer');
 const videoPlayer = document.querySelector('#jsVideoPlayer video');
 const playBtn = document.getElementById('jsPlayButton');
 const volumeBtn = document.getElementById('jsVolumeBtn');
-const fullScrnBtn = document.getElementById("jsFullScreen");
+const fullScrnBtn = document.getElementById('jsFullScreen');
 
 function handlePlayClick() {
   if (videoPlayer.paused) {
@@ -15,16 +15,32 @@ function handlePlayClick() {
 }
 
 function exitFullScreen() {
-    fullScrnBtn.innerHTML = '<i class="fas fa-expand"></i>';
-    fullScrnBtn.addEventListener("click", goFullScreen);
+  fullScrnBtn.innerHTML = '<i class="fas fa-expand"></i>';
+  fullScrnBtn.addEventListener('click', goFullScreen);
+  if (document.exitFullscreen) {
+    document.exitFullscreen();
+  } else if (document.mozCancelFullScreen) {
+    document.mozCancelFullScreen();
+  } else if (document.webkitExitFullscreen) {
     document.webkitExitFullscreen();
+  } else if (document.msExitFullscreen) {
+    document.msExitFullscreen();
+  }
 }
 
 function goFullScreen() {
+  if (videoContainer.requestFullscreen) {
+    videoContainer.requestFullscreen();
+  } else if (videoContainer.mozRequestFullScreen) {
+    videoContainer.mozRequestFullScreen();
+  } else if (videoContainer.webkitRequestFullscreen) {
     videoContainer.webkitRequestFullscreen();
-    fullScrnBtn.innerHTML = '<i class="fas fa-compress"></i>';
-    fullScrnBtn.removeEventListener("click", goFullScreen);
-    fullScrnBtn.addEventListener("click", exitFullScreen);
+  } else if (videoContainer.msRequestFullscreen) {
+    videoContainer.msRequestFullscreen();
+  }
+  fullScrnBtn.innerHTML = '<i class="fas fa-compress"></i>';
+  fullScrnBtn.removeEventListener('click', goFullScreen);
+  fullScrnBtn.addEventListener('click', exitFullScreen);
 }
 
 function handleVolumeClick() {
@@ -40,7 +56,7 @@ function handleVolumeClick() {
 function init() {
   playBtn.addEventListener('click', handlePlayClick);
   volumeBtn.addEventListener('click', handleVolumeClick);
-  fullScrnBtn.addEventListener("click", goFullScreen);
+  fullScrnBtn.addEventListener('click', goFullScreen);
 }
 
 if (videoContainer) {
