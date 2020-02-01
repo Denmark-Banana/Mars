@@ -3,7 +3,7 @@ mixin videoPlayer(video ={})
     .videoPlayer#jsVideoPlayer
         video(src=`/${video.src}`/*, autoplay*/)
         .videoPlayer__controls
-            .videoPlayer__column
+            .videoPlayer__column#jsVolumeBtn
                 span
                     i.fas.fa-volume-up
                 span
