@@ -122,6 +122,7 @@ export const getMe = async (req, res) => {
     console.log(error);
     res.redirect(routes.home);
   }
+  // TODO
   // res.render("userDetail", { pageTitle: "User Detail", user: req.user });
 }
 
